@@ -7,9 +7,12 @@
 #include "FeatureVector.h"
 #include <iostream>
 
-FeatureVector::FeatureVector()
+FeatureVector::FeatureVector(std::vector<std::string> vocabulary)
 {
-
+    for (auto it = vocabulary.begin(); it != vocabulary.end(); it++)
+    {
+        AddWord(*it, false);
+    }
 }
 
 FeatureVector::~FeatureVector()
@@ -35,5 +38,17 @@ bool FeatureVector::Exists(std::string word)
     else
     {
         return false;
+    }
+}
+
+void FeatureVector::SetExists(std::string word)
+{
+    Key w = {word};
+
+    auto search = words.find(w);
+    if (search != words.end() && search->exists == false)
+    {
+        words.erase(search);
+        AddWord(word, true);
     }
 }

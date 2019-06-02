@@ -8,6 +8,7 @@
 
 #include <string>
 #include <set>
+#include <vector>
 
 struct Word { std::string word; bool exists; };
 struct Key { std::string key; };
@@ -23,11 +24,12 @@ private:
 
 public:
 
-    FeatureVector();
+    FeatureVector(std::vector<std::string> vocabulary);
     ~FeatureVector();
 
     void AddWord(std::string word, bool exists);
     bool Exists(std::string word);
+    void SetExists(std::string word);
 };
 
 #endif

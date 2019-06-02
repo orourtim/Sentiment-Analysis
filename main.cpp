@@ -10,14 +10,17 @@
 
 int main(int argc, char* argv[])
 {
-    FeatureVector f;
-
-    f.AddWord("tim", true);
-    f.AddWord("cute", true);
-    f.AddWord("good", false);
+    std::vector<std::string> vocab = {"tim", "cute", "good"};
+    FeatureVector f(vocab);
 
     std::cout << "tim exists: " << f.Exists("tim") << std::endl
               << "cute exists: " << f.Exists("cute") << std::endl
               << "good exists: " << f.Exists("good") << std::endl;
+
+    std::cout << "SetExists on \"good\": ";
+
+    f.SetExists("good");
+
+    std::cout << f.Exists("good") << std::endl;
 
 }
