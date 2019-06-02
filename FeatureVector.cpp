@@ -7,7 +7,7 @@
 #include "FeatureVector.h"
 #include <iostream>
 
-FeatureVector::FeatureVector(std::vector<std::string> vocabulary)
+FeatureVector::FeatureVector(std::set<std::string> vocabulary)
 {
     for (auto it = vocabulary.begin(); it != vocabulary.end(); it++)
     {

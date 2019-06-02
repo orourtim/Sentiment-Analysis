@@ -24,7 +24,7 @@ private:
 
 public:
 
-    FeatureVector(std::vector<std::string> vocabulary);
+    FeatureVector(std::set<std::string> vocabulary);
     ~FeatureVector();
 
     void AddWord(std::string word, bool exists);

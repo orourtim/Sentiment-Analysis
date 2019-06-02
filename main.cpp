@@ -10,7 +10,7 @@
 
 int main(int argc, char* argv[])
 {
-    std::vector<std::string> vocab = {"tim", "cute", "good"};
+    std::set<std::string> vocab = {"tim", "cute", "good"};
     FeatureVector f(vocab);
 
     std::cout << "tim exists: " << f.Exists("tim") << std::endl
