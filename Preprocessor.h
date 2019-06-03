@@ -12,7 +12,7 @@
 #include <string>
 #include <algorithm>
 
-struct PreprocessorData { std::vector<FeatureVector> training_vector; std::vector<FeatureVector> test_vector; };
+struct PreprocessorData { std::vector<FeatureVector> training_vector; std::vector<FeatureVector> test_vector; std::set<std::string> vocabulary; };
 
 class Preprocessor {
 private:
