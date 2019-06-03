@@ -12,19 +12,19 @@
 #include <string>
 #include <algorithm>
 
-struct PreprocessorData { std::vector<FeatureVector>* training_vector; std::vector<FeatureVector>* testing_vector; };
+struct PreprocessorData { std::vector<FeatureVector> training_vector; std::vector<FeatureVector> testing_vector; };
 
 class Preprocessor {
 private:
     std::string training_file;
-    std::string testing_file;
+    std::string test_file;
 
     
     bool ValidCharacter(const char& c);
     bool IsSpace(const char& c);
     bool WordsSeparatedByPunctuation(const std::string& line, int i);
 public:
-    Preprocessor(const std::string& training_file, const std::string& testing_file);
+    Preprocessor(const std::string& training_file, const std::string& test_file);
     ~Preprocessor();
 
     PreprocessorData Process();

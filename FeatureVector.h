@@ -30,6 +30,8 @@ public:
     void AddWord(std::string word, bool exists);
     bool Exists(std::string word);
     void SetExists(std::string word);
+    void SetClassLabel(int l) { class_label = l; }
+    int GetClassLabel() { return class_label; }
 };
 
 #endif

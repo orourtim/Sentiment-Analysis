@@ -28,10 +28,10 @@ int main(int argc, char* argv[])
 
     vocab = p.GetVocabulary();
 
-    for (auto it = vocab.begin(); it != vocab.end(); ++it)
-    {
-        std::cout << *it << std::endl;
-    }
+    // for (auto it = vocab.begin(); it != vocab.end(); ++it)
+    // {
+    //     std::cout << *it << std::endl;
+    // }
 
-    p.Process();
+    PreprocessorData d = p.Process();
 }
