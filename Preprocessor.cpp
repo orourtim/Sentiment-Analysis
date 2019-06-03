@@ -21,6 +21,7 @@ PreprocessorData Preprocessor::Process()
 {
     PreprocessorData data;
     std::set<std::string> vocabulary = GetVocabulary();
+    data.vocabulary = vocabulary;
 
     std::ofstream preprocessed_train("preprocessed_train.txt");
     std::ofstream preprocessed_test("preprocessed_test.txt");
