@@ -9,6 +9,7 @@
 #include "Preprocessor.h"
 #include "FeatureVector.h"
 #include "FeatureNode.h"
+#include "ClassNode.h"
 
 int main(int argc, char* argv[])
 {
@@ -41,5 +42,14 @@ int main(int argc, char* argv[])
     std::cout << "P(\"nice\" = false | classlabel = true) = " << std::fixed << prob2 << std::endl;
     std::cout << "P(\"nice\" = true | classlabel = false) = " << std::fixed << prob3 << std::endl;
     std::cout << "P(\"nice\" = true | classlabel = true) = " << std::fixed << prob4 << std::endl;
+
+    ClassNode cNode;
+    cNode.FillProbabilityTable(d.training_vector);
+    double prob5 = cNode.GetProbability(false);
+    double prob6 = cNode.GetProbability(true);
+
+    std::cout.precision(17);
+    std::cout << "P(classlabel = false) = " << std::fixed << prob5 << std::endl;
+    std::cout << "P(classlabel = true) = " << std::fixed << prob6 << std::endl;
 
 }

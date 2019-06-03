@@ -3,6 +3,8 @@
  * @date    3 June 2019
  * @brief   CS 331 Spring 2019 Sentiment Analysis
  */
+#ifndef FEATURENODE_H
+#define FEATURENODE_H
 
 #include "AbstractNode.h"
 
@@ -21,3 +23,5 @@ public:
     void FillProbabilityTable(std::vector<FeatureVector> vectors);
     double GetProbability(bool feature, bool class_variable) const;
 };
+
+#endif
