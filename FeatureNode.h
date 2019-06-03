@@ -20,7 +20,7 @@ public:
     FeatureNode(std::string word);
     ~FeatureNode();
 
-    void FillProbabilityTable(std::vector<FeatureVector> vectors);
+    void FillProbabilityTable(const std::vector<FeatureVector>& vectors);
     double GetProbability(bool feature, bool class_variable) const;
 };
 

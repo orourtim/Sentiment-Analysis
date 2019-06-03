@@ -40,7 +40,6 @@ void NaiveBayesClassifier::Train()
 
 void NaiveBayesClassifier::Test()
 {
-    
     for (auto it = test_vector.begin(); it != test_vector.end(); ++it)
     {
         bool class_label_value = false;

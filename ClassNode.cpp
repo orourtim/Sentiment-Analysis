@@ -17,7 +17,7 @@ ClassNode::~ClassNode()
 
 }
 
-void ClassNode::FillProbabilityTable(std::vector<FeatureVector> vectors)
+void ClassNode::FillProbabilityTable(const std::vector<FeatureVector>& vectors)
 {
     for (int c = 0; c < 2; c++)
     {

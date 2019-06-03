@@ -13,7 +13,7 @@ public:
     AbstractNode() {};
     ~AbstractNode() {};
 
-    virtual void FillProbabilityTable(std::vector<FeatureVector> vectors) = 0;
+    virtual void FillProbabilityTable(const std::vector<FeatureVector>& vectors) = 0;
 };
 
 #endif

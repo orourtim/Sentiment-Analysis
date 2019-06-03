@@ -23,7 +23,7 @@ FeatureNode::~FeatureNode()
 
 }
 
-void FeatureNode::FillProbabilityTable(std::vector<FeatureVector> vectors)
+void FeatureNode::FillProbabilityTable(const std::vector<FeatureVector>& vectors)
 {
     for (int feature = 0; feature < NUM_OF_POSSIBLE_FEATURE_VALUES; feature++)
     {

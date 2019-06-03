@@ -16,7 +16,7 @@ public:
     ClassNode();
     ~ClassNode();
 
-    void FillProbabilityTable(std::vector<FeatureVector> vectors);
+    void FillProbabilityTable(const std::vector<FeatureVector>& vectors);
     double GetProbability(bool class_variable) const;
 };
 

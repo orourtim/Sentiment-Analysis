@@ -10,6 +10,7 @@
 #include "FeatureVector.h"
 #include "FeatureNode.h"
 #include "ClassNode.h"
+#include "NaiveBayesClassifier.h"
 
 int main(int argc, char* argv[])
 {
@@ -51,5 +52,10 @@ int main(int argc, char* argv[])
     std::cout.precision(17);
     std::cout << "P(classlabel = false) = " << std::fixed << prob5 << std::endl;
     std::cout << "P(classlabel = true) = " << std::fixed << prob6 << std::endl;
+
+    NaiveBayesClassifier classifier(d.training_vector, d.test_vector, d.vocabulary);
+    classifier.Run();
+
+    std::vector<int> results = classifier.GetResults();
 
 }
