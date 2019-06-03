@@ -4,10 +4,12 @@
  * @brief   CS 331 Spring 2019 Sentiment Analysis
  */
 
+#include "FeatureVector.h"
+
 class AbstractNode {
 public:
     AbstractNode() {};
     ~AbstractNode() {};
 
-    virtual void FillProbabilityTable() = 0;
+    virtual void FillProbabilityTable(std::vector<FeatureVector> vectors) = 0;
 };
