@@ -26,7 +26,7 @@ void FeatureVector::AddWord(std::string word, bool exists)
     words.insert(w);
 }
 
-bool FeatureVector::Exists(std::string word)
+bool FeatureVector::Exists(std::string word) const
 {
     Key w = {word};
 

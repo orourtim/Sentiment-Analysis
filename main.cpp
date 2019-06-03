@@ -26,12 +26,5 @@ int main(int argc, char* argv[])
 
     Preprocessor p("trainingSet.txt", "testSet.txt");
 
-    vocab = p.GetVocabulary();
-
-    // for (auto it = vocab.begin(); it != vocab.end(); ++it)
-    // {
-    //     std::cout << *it << std::endl;
-    // }
-
     PreprocessorData d = p.Process();
 }

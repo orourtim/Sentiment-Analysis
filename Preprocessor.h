@@ -12,23 +12,25 @@
 #include <string>
 #include <algorithm>
 
-struct PreprocessorData { std::vector<FeatureVector> training_vector; std::vector<FeatureVector> testing_vector; };
+struct PreprocessorData { std::vector<FeatureVector> training_vector; std::vector<FeatureVector> test_vector; };
 
 class Preprocessor {
 private:
     std::string training_file;
     std::string test_file;
 
-    
+    std::set<std::string> GetVocabulary();
     bool ValidCharacter(const char& c);
     bool IsSpace(const char& c);
     bool WordsSeparatedByPunctuation(const std::string& line, int i);
+    void InsertVocabularyIntoFile(std::ofstream& preprocessed_file, const std::set<std::string>& vocabulary);
+    std::vector<FeatureVector> GetFeatureVectors(std::ifstream& data, const std::set<std::string>& vocabulary);
+    void InsertFeatureVectorsIntoFile(std::ofstream& preprocessed_file, std::vector<FeatureVector>& vectors, const std::set<std::string>& vocabulary);
 public:
     Preprocessor(const std::string& training_file, const std::string& test_file);
     ~Preprocessor();
 
     PreprocessorData Process();
-    std::set<std::string> GetVocabulary();
 };
 
 #endif

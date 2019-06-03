@@ -19,19 +19,18 @@ inline bool operator<(const Word& w1, const Word& w2) { return w1.word < w2.word
 
 class FeatureVector {
 private:
-        std::set<Word, std::less<>> words;
-        int class_label;
+    std::set<Word, std::less<>> words;
+    int class_label;
 
+    void AddWord(std::string word, bool exists);
 public:
-
     FeatureVector(std::set<std::string> vocabulary);
     ~FeatureVector();
 
-    void AddWord(std::string word, bool exists);
-    bool Exists(std::string word);
+    bool Exists(std::string word) const;
     void SetExists(std::string word);
     void SetClassLabel(int l) { class_label = l; }
-    int GetClassLabel() { return class_label; }
+    int GetClassLabel() const { return class_label; }
 };
 
 #endif
