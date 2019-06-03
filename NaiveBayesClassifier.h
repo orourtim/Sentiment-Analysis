@@ -10,6 +10,8 @@
 #include "FeatureNode.h"
 #include "ClassNode.h"
 
+#include <algorithm>
+
 class NaiveBayesClassifier {
 private:
     std::vector<FeatureVector> training_vector;
@@ -17,13 +19,17 @@ private:
     std::set<std::string> vocabulary;
     std::vector<FeatureNode> feature_nodes;
     ClassNode class_node;
+    std::vector<int> result_vector;
 
     void Train();
+    void Test();
 public:
     NaiveBayesClassifier(std::vector<FeatureVector> training_vector, std::vector<FeatureVector> test_vector, std::set<std::string> vocabulary);
     ~NaiveBayesClassifier();
 
     void Run();
+    
+    std::vector<int> GetResults() const { return result_vector; }
 };
 
 #endif
