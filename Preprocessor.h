@@ -7,7 +7,10 @@
 #define PREPROCESSOR_H
 
 #include "FeatureVector.h"
+#include <iostream>
+#include <fstream>
 #include <string>
+#include <algorithm>
 
 struct PreprocessorData { std::vector<FeatureVector>* training_vector; std::vector<FeatureVector>* testing_vector; };
 
@@ -16,13 +19,16 @@ private:
     std::string training_file;
     std::string testing_file;
 
-    std::set<std::string> GetVocabulary();
+    
     bool ValidCharacter(const char& c);
+    bool IsSpace(const char& c);
+    bool WordsSeparatedByPunctuation(const std::string& line, int i);
 public:
     Preprocessor(const std::string& training_file, const std::string& testing_file);
     ~Preprocessor();
 
     PreprocessorData Process();
+    std::set<std::string> GetVocabulary();
 };
 
 #endif

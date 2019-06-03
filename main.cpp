@@ -6,6 +6,7 @@
 
 #include <iostream>
 
+#include "Preprocessor.h"
 #include "FeatureVector.h"
 
 int main(int argc, char* argv[])
@@ -23,4 +24,14 @@ int main(int argc, char* argv[])
 
     std::cout << f.Exists("good") << std::endl;
 
+    Preprocessor p("trainingSet.txt", "testSet.txt");
+
+    vocab = p.GetVocabulary();
+
+    for (auto it = vocab.begin(); it != vocab.end(); ++it)
+    {
+        std::cout << *it << std::endl;
+    }
+
+    p.Process();
 }
