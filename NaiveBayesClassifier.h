@@ -18,6 +18,7 @@ private:
     std::vector<FeatureNode> feature_nodes;
     ClassNode class_node;
 
+    void Train();
 public:
     NaiveBayesClassifier(std::vector<FeatureVector> training_vector, std::vector<FeatureVector> test_vector, std::set<std::string> vocabulary);
     ~NaiveBayesClassifier();
