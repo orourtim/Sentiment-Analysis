@@ -1,6 +1,6 @@
 /**
  * @author  Timothy O'Rourke
- * @date    6 June 2019
+ * @date    2 June 2019
  * @brief   CS 331 Spring 2019 Sentiment Analysis
  */
 #ifndef FEATUREVECTOR_H
