@@ -23,8 +23,9 @@ private:
 
     void Train();
     void Test();
+    double CalculateYValue(bool Y, const std::vector<FeatureVector>::iterator& it);
 public:
-    NaiveBayesClassifier(std::vector<FeatureVector> training_vector, std::vector<FeatureVector> test_vector, std::set<std::string> vocabulary);
+    NaiveBayesClassifier(const std::vector<FeatureVector>& training_vector, const std::vector<FeatureVector>& test_vector, const std::set<std::string>& vocabulary);
     ~NaiveBayesClassifier();
 
     void Run();
